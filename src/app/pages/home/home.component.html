@@ -1,0 +1,130 @@
+<div class="bg-brand-dark text-white font-sans">
+
+    <!-- Hero Section -->
+    <section class="hero-section-video relative overflow-hidden px-5 text-left">
+        <ngx-particles [id]="id" [options]="particlesOptions" class="particles-bg"></ngx-particles>
+        <div class="content-wrapper w-full mx-auto px-4 sm:px-6 md:w-4/5">
+            <!-- Content -->
+            <div class="content">
+                <h1 class="text-6xl font-bold leading-tight mb-8">
+                    Empowering businesses with <br>results-driven web design<br> that outranks competitors
+                </h1>
+                <button class="bg-brand-light text-brand-dark border-none py-4 px-8 font-bold cursor-pointer inline-flex items-center gap-2.5 text-base rounded-md">
+                    Start your project <span>&#8599;</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Logos -->
+    <section class="py-12 w-full px-20 flex justify-around items-center flex-wrap gap-5">
+        <img src="assets/images/logo-image-1.png" alt="Oyriss Home" class="h-8">
+        <img src="assets/images/logo-image-2.png" alt="Restore" class="h-8">
+        <img src="assets/images/logo-image-3.png" alt="Bakkal" class="h-8">
+        <img src="assets/images/logo-image-4.png" alt="Rilla" class="h-8">
+        <img src="assets/images/logo-image-5.png" alt="Vita Care" class="h-8">
+    </section>
+
+    <div class="relative z-10 bg-brand-dark">
+        <!-- Core Services -->
+        <section class="px-5 cta-bg-service-gradient section-padding">
+            <div class="content-wrapper w-full mx-auto px-4 sm:px-6 md:w-4/5">
+                <div class="text-center mb-20">
+                    <h2 class="text-6xl font-bold mb-5">Our core agency services</h2>
+                    <p class="text-brand-gray mb-10 px-16">
+                        Discover the services we offer that help digitally transform our clients businesses. <br>Our core agency service offering includes web development, branding, SEO and digital paid ads and some other additional services too.
+                    </p>    
+                </div>
+                <div class="grid grid-cols-1 items-center md:grid-cols-2 md:gap-16">
+                    <div class="flex-1 w-full">
+                        <div *ngFor="let service of services" 
+                            (click)="selectService(service)"
+                            class="py-6 md:py-10 border-b cursor-pointer last:border-b-0 first:pt-2"
+                            [ngClass]="{'border-brand-light': selectedService === service, 'border-gray-700': selectedService !== service}">
+                            <h3 class="text-3xl mb-2.5">
+                                {{ service.title }}
+                            </h3>
+                            <p @fadeInOut class="text-brand-gray text-base md:text-lg" *ngIf="selectedService === service">
+                                {{ service.description }}
+                            </p>
+                            <button @fadeInOut *ngIf="selectedService === service" class="bg-brand-light text-brand-dark border-none py-2 px-4 md:py-2.5 md:px-5 font-bold cursor-pointer inline-flex items-center gap-2.5 text-sm rounded-md mt-5">
+                                Explore the project <span>&#8599;</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex-1 w-full mt-8 md:mt-0">
+                        <div *ngFor="let service of services">
+                            <img @fadeImage *ngIf="service === selectedService" [src]="service.imageUrl" 
+                                alt="Service Image" class="rounded-2xl aspect-3/2 object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Multipurpose Designs -->
+        <section class="px-5 text-center section-padding">
+            <div class="content-wrapper w-full mx-auto text-left px-4 sm:px-6 md:w-4/5">
+                <h2 class="text-6xl font-bold mb-8">Multipurpose website designs<br> ready to shine</h2>
+                <p class="text-brand-gray mb-12 text-1xl">Design your fully styled websites with AI</p>
+            </div>
+            <div class="content-wrapper w-full mx-auto px-4 sm:px-6 md:w-4/5">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16">
+                    <div class="flex-none w-100">
+                        <img src="assets/images/image-1.png" alt="Project 1" class="w-full rounded-3xl mb-5">
+                        <div class="text-left">
+                            <h3 class="text-xl font-bold">Project Name</h3>
+                            <p class="text-brand-gray">Industry Type</p>
+                        </div>
+                    </div>
+                    <div class="flex-none w-100">
+                        <img src="assets/images/image-2.png" alt="Project 2" class="w-full rounded-3xl mb-5">
+                        <div class="text-left">
+                            <h3 class="text-xl font-bold">Project Name</h3>
+                            <p class="text-brand-gray">Industry Type</p>
+                        </div>
+                    </div>
+                    <div class="flex-none w-100">
+                        <img src="assets/images/image-1.png" alt="Project 1" class="w-full rounded-3xl mb-5">
+                        <div class="text-left">
+                            <h3 class="text-xl font-bold">Project Name</h3>
+                            <p class="text-brand-gray">Industry Type</p>
+                        </div>
+                    </div>
+                    <div class="flex-none w-100">
+                        <img src="assets/images/image-2.png" alt="Project 2" class="w-full rounded-3xl mb-5">
+                        <div class="text-left">
+                            <h3 class="text-xl font-bold">Project Name</h3>
+                            <p class="text-brand-gray">Industry Type</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="px-5 relative faqs-section-bg section-padding">
+            <div class="content-wrapper w-full mx-auto px-4 sm:px-6 md:w-4/5 relative z-10">
+                <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
+                    <div class="flex-1">
+                        <h2 class="text-6xl font-bold mb-2.5">What else would you like to know?</h2>
+                        <p class="text-brand-gray">Design your fully styled websites with AI</p>
+                    </div>
+                    <div class="flex-1 w-full">
+                        <div *ngFor="let faq of faqs; let i = index" class="border-b last:border-b-0 border-gray-700 py-8">
+                            <div class="flex justify-between items-center mb-2 cursor-pointer" (click)="toggleFaq(i)">
+                                <h4 class="text-xl m-0">{{ faq.question }}</h4>
+                                <span class="text-2xl transition-transform duration-300" [class.rotate-45]="faq.open">+</span>
+                            </div>
+                            <div [@slideInOut]="faq.open ? 'expanded' : 'collapsed'" class="overflow-hidden">
+                                <p class="text-brand-gray pr-8 pb-5">
+                                    {{ faq.answer }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

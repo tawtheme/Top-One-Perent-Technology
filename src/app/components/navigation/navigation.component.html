@@ -1,0 +1,65 @@
+<nav class="text-white fixed top-0 left-0 right-0 z-50" [ngClass]="{'scrolled-nav': scrolled, 'nav-animate': scrolled}">
+    <div class="w-full mx-auto px-4 sm:px-6 md:w-4/5 py-5 flex justify-between items-center h-20">
+
+        <!-- Logo -->
+        <a routerLink="/" class="no-underline text-white text-2xl font-bold flex items-center gap-2.5">
+            <img src="assets/images/logo.svg" alt="Logo" class="h-10">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex gap-10 items-center">
+            <a routerLink="/about" routerLinkActive="active" 
+            class="no-underline text-brand-gray font-medium transition-colors duration-300">
+                About
+            </a>
+            <a routerLink="/services" routerLinkActive="active" 
+            class="no-underline text-brand-gray font-medium transition-colors duration-300">
+                Services
+            </a>
+            <a routerLink="/projects" routerLinkActive="active" 
+                class="no-underline text-brand-gray font-medium transition-colors duration-300">
+                Projects
+            </a>
+            <a routerLink="/faqs" routerLinkActive="active" 
+                class="no-underline text-brand-gray font-medium transition-colors duration-300">
+                FAQs
+            </a>
+            <a routerLink="/blogs" routerLinkActive="active" 
+                class="no-underline text-brand-gray font-medium transition-colors duration-300">
+                Blogs
+            </a>
+        </div>
+
+        <!-- Contact Button (Desktop) -->
+        <a routerLink="/contact"
+            class="hidden md:inline-flex bg-brand-light text-brand-dark border-none py-2.5 px-5 font-bold cursor-pointer items-center gap-2.5 text-sm rounded-md no-underline">
+            Contact Us <span>&#8599;</span>
+        </a>
+
+        <!-- Hamburger Icon (Mobile) -->
+        <button class="md:hidden flex items-center" (click)="toggleMobileMenu()">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div *ngIf="mobileMenuOpen" class="md:hidden bg-brand-dark absolute top-20 left-0 w-full z-40 shadow-lg">
+        <div class="flex flex-col gap-6 px-6 py-6">
+            <a routerLink="/about" routerLinkActive="active" class="no-underline text-brand-gray font-medium" (click)="toggleMobileMenu()">About</a>
+            <a routerLink="/services" routerLinkActive="active" class="no-underline text-brand-gray font-medium" (click)="toggleMobileMenu()">Services</a>
+            <a routerLink="/projects" routerLinkActive="active" class="no-underline text-brand-gray font-medium" (click)="toggleMobileMenu()">Projects</a>
+            <a routerLink="/faqs" routerLinkActive="active" class="no-underline text-brand-gray font-medium" (click)="toggleMobileMenu()">FAQs</a>
+            <a routerLink="/blogs" routerLinkActive="active" class="no-underline text-brand-gray font-medium" (click)="toggleMobileMenu()">Blogs</a>
+            <a routerLink="/contact"
+                class="bg-brand-light text-brand-dark border-none py-2.5 px-5 font-bold cursor-pointer items-center gap-2.5 text-sm rounded-md no-underline"
+                (click)="toggleMobileMenu()">
+                Contact Us <span>&#8599;</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Spacer to prevent content from hiding behind fixed nav -->
+<div class="h-20"></div>

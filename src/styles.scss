@@ -1,0 +1,40 @@
+@use 'tailwindcss/base';
+@use 'tailwindcss/components';
+@use 'tailwindcss/utilities';
+
+/* You can add global styles to this file, and also import other style files */
+@layer base {
+    body {
+        @apply bg-brand-dark text-white font-sans;
+        overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-grotesk;
+    }
+
+    h1 {
+        @apply text-5xl md:text-6xl font-bold;
+    }
+
+    h2 {
+        @apply text-4xl md:text-5xl font-bold;
+    }
+
+    h3 {
+        @apply text-2xl font-bold;
+    }
+
+    h4 {
+        @apply text-xl font-bold;
+    }
+
+    p {
+        @apply text-brand-gray;
+    }
+
+    .section-padding {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
