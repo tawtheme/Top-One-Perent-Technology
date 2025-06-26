@@ -1,99 +1,41 @@
-<div style="min-height: 100vh; background: #f8f9fa;">
-  <!-- Hero Section -->
-  <section style="padding: 100px 20px 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); text-align: center; color: white;">
-    <div style="max-width: 800px; margin: 0 auto;">
-      <h1 style="font-size: 3.5rem; font-weight: bold; margin-bottom: 20px;">Frequently Asked Questions</h1>
-      <p style="font-size: 1.3rem; opacity: 0.9; line-height: 1.6;">
-        Find answers to the most common questions about our services and processes.
-      </p>
-    </div>
-  </section>
+<div class="text-white font-sans min-h-screen">
 
-  <!-- FAQs Section -->
-  <section style="padding: 80px 20px; background: white;">
-    <div style="max-width: 800px; margin: 0 auto;">
-      <div style="display: flex; flex-direction: column; gap: 20px;">
-        
-        <!-- FAQ Item 1 -->
-        <div style="border: 2px solid #e1e5e9; border-radius: 10px; overflow: hidden;">
-          <button (click)="toggleFAQ(0)" style="width: 100%; padding: 20px; background: white; border: none; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; font-weight: 500; color: #333;">
-            <span>What services do you offer?</span>
-            <span style="font-size: 1.5rem; transition: transform 0.3s ease;">{{ faqOpen[0] ? '−' : '+' }}</span>
-          </button>
-          <div *ngIf="faqOpen[0]" style="padding: 0 20px 20px; color: #666; line-height: 1.6;">
-            <p>We offer a comprehensive range of technology services including web development, mobile app development, e-commerce solutions, technology consulting, and custom software development. Our team specializes in creating scalable, modern applications using the latest technologies and best practices.</p>
-          </div>
+    <!-- Hero Section -->
+    <section class="inner-hero-section section-animation relative overflow-hidden px-5 text-left">
+        <div class="w-full mx-auto md:w-4/5 contact-wrapper">
+            <!-- Left Column -->
+            <div class="flex flex-col gap-6 justify-center">
+                <div class="flex flex-col gap-2">
+                    <div class="uppercase tracking-widest text-lg text-white/80">Frequently Asked Questions</div>
+                    <h1 class="text-6xl font-bold leading-tight">Got questions?<br>We've got answers!</h1>
+                </div>
+                <div class="flex flex-col gap-6">
+                    <div class="contact-card-bg rounded-3xl border border-[#333] p-6">
+                        <div class="text-white/70 text-base mb-1">Quick Contact</div>
+                        <div class="text-white text-xl font-semibold">info&#64;toponepercent.com</div>
+                    </div>
+                    <div class="contact-card-bg rounded-3xl border border-[#333] p-6">
+                        <div class="text-white/70 text-base mb-1">Need more help?</div>
+                        <div class="text-white text-xl font-semibold">Schedule a call</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column - FAQ Accordion -->
+            <div class="w-full">
+                <div class="faq-accordion space-y-4">
+                    <div *ngFor="let faq of faqs; let i = index" class="faq-item contact-card-bg border border-[#333] rounded-xl overflow-hidden">
+                        <button (click)="toggleFAQ(i)" class="w-full text-left p-6 flex justify-between items-center hover:bg-[#222] transition-colors">
+                            <span class="text-white font-semibold">{{ faq.question }}</span>
+                            <span class="text-white text-2xl transition-transform duration-300" [class.rotate-45]="faqOpen[i]">+</span>
+                        </button>
+                        <div *ngIf="faqOpen[i]" class="px-6 pb-6 text-gray-300 leading-relaxed">
+                            {{ faq.answer }}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- FAQ Item 2 -->
-        <div style="border: 2px solid #e1e5e9; border-radius: 10px; overflow: hidden;">
-          <button (click)="toggleFAQ(1)" style="width: 100%; padding: 20px; background: white; border: none; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; font-weight: 500; color: #333;">
-            <span>How long does a typical project take?</span>
-            <span style="font-size: 1.5rem; transition: transform 0.3s ease;">{{ faqOpen[1] ? '−' : '+' }}</span>
-          </button>
-          <div *ngIf="faqOpen[1]" style="padding: 0 20px 20px; color: #666; line-height: 1.6;">
-            <p>Project timelines vary depending on complexity and scope. A simple website might take 2-4 weeks, while a complex web application could take 3-6 months. We provide detailed project timelines during our initial consultation and keep you updated throughout the development process.</p>
-          </div>
-        </div>
-
-        <!-- FAQ Item 3 -->
-        <div style="border: 2px solid #e1e5e9; border-radius: 10px; overflow: hidden;">
-          <button (click)="toggleFAQ(2)" style="width: 100%; padding: 20px; background: white; border: none; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; font-weight: 500; color: #333;">
-            <span>What is your pricing structure?</span>
-            <span style="font-size: 1.5rem; transition: transform 0.3s ease;">{{ faqOpen[2] ? '−' : '+' }}</span>
-          </button>
-          <div *ngIf="faqOpen[2]" style="padding: 0 20px 20px; color: #666; line-height: 1.6;">
-            <p>We offer flexible pricing options including fixed-price projects, hourly rates, and retainer agreements. Pricing depends on project scope, complexity, and timeline. We provide detailed quotes after understanding your requirements and always ensure transparency in our pricing.</p>
-          </div>
-        </div>
-
-        <!-- FAQ Item 4 -->
-        <div style="border: 2px solid #e1e5e9; border-radius: 10px; overflow: hidden;">
-          <button (click)="toggleFAQ(3)" style="width: 100%; padding: 20px; background: white; border: none; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; font-weight: 500; color: #333;">
-            <span>Do you provide ongoing support and maintenance?</span>
-            <span style="font-size: 1.5rem; transition: transform 0.3s ease;">{{ faqOpen[3] ? '−' : '+' }}</span>
-          </button>
-          <div *ngIf="faqOpen[3]" style="padding: 0 20px 20px; color: #666; line-height: 1.6;">
-            <p>Yes, we offer comprehensive support and maintenance packages. This includes regular updates, security patches, performance monitoring, and technical support. We also provide training and documentation to help your team manage the solution effectively.</p>
-          </div>
-        </div>
-
-        <!-- FAQ Item 5 -->
-        <div style="border: 2px solid #e1e5e9; border-radius: 10px; overflow: hidden;">
-          <button (click)="toggleFAQ(4)" style="width: 100%; padding: 20px; background: white; border: none; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; font-weight: 500; color: #333;">
-            <span>What technologies do you use?</span>
-            <span style="font-size: 1.5rem; transition: transform 0.3s ease;">{{ faqOpen[4] ? '−' : '+' }}</span>
-          </button>
-          <div *ngIf="faqOpen[4]" style="padding: 0 20px 20px; color: #666; line-height: 1.6;">
-            <p>We use modern, industry-standard technologies including React, Angular, Node.js, Python, PHP, and various cloud platforms like AWS, Azure, and Google Cloud. We choose the best technology stack for each project based on requirements, scalability needs, and client preferences.</p>
-          </div>
-        </div>
-
-        <!-- FAQ Item 6 -->
-        <div style="border: 2px solid #e1e5e9; border-radius: 10px; overflow: hidden;">
-          <button (click)="toggleFAQ(5)" style="width: 100%; padding: 20px; background: white; border: none; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; font-weight: 500; color: #333;">
-            <span>How do you ensure project quality?</span>
-            <span style="font-size: 1.5rem; transition: transform 0.3s ease;">{{ faqOpen[5] ? '−' : '+' }}</span>
-          </button>
-          <div *ngIf="faqOpen[5]" style="padding: 0 20px 20px; color: #666; line-height: 1.6;">
-            <p>We follow industry best practices including code reviews, automated testing, continuous integration, and regular client feedback sessions. Our development process includes multiple quality checkpoints and we maintain high coding standards throughout the project lifecycle.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact CTA Section -->
-  <section style="padding: 80px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); text-align: center; color: white;">
-    <div style="max-width: 600px; margin: 0 auto;">
-      <h2 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 20px;">Still Have Questions?</h2>
-      <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9;">
-        Can't find what you're looking for? Our team is here to help answer any questions you might have.
-      </p>
-      <button routerLink="/contact" style="background: white; color: #667eea; border: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1.1rem;">
-        Contact Us
-      </button>
-    </div>
-  </section>
 </div>
