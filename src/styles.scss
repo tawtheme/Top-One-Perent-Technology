@@ -5,24 +5,33 @@
 /* You can add global styles to this file, and also import other style files */
 @layer base {
     body {
-        @apply bg-brand-dark text-white font-sans;
+        @apply bg-[#0a0a0a] text-white font-sans antialiased;
         overflow-x: hidden;
+        font-family: 'Inter', system-ui, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
     }
 
     h1, h2, h3, h4, h5, h6 {
         @apply font-grotesk;
+        font-family: 'Inter', system-ui, sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.01em;
     }
 
     h1 {
         @apply text-5xl md:text-6xl font-bold;
+        line-height: 1.1;
     }
 
     h2 {
         @apply text-4xl md:text-5xl font-bold;
+        line-height: 1.15;
     }
 
     h3 {
         @apply text-2xl font-bold;
+        line-height: 1.2;
     }
 
     h4 {
@@ -30,11 +39,216 @@
     }
 
     p {
-        @apply text-brand-gray;
+        @apply text-gray-300;
+        font-size: 1.08rem;
+        line-height: 1.7;
     }
 
     .section-padding {
         padding-top: 100px;
         padding-bottom: 100px;
     }
+
+    /* Button utility */
+    .btn-primary {
+        @apply bg-yellow-300 text-gray-900 font-semibold rounded-lg px-8 py-3 text-lg shadow transition hover:bg-yellow-200 focus:outline-none focus:ring-2 focus:ring-yellow-400;
+    }
+
+    /* Card utility */
+    .card-dark {
+        @apply bg-[#181818] rounded-2xl shadow-lg p-8 text-center;
+    }
+
+    /* Responsive helpers */
+    .flex-center {
+        @apply flex items-center justify-center;
+    }
+    .grid-responsive {
+        @apply grid gap-8 md:grid-cols-2 lg:grid-cols-3;
+    }
+}
+
+app-navigation {
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    background: transparent;
+    box-shadow: none;
+    position: fixed; top: 0; left: 0; z-index: 50;
+    width: 100%;
+}
+
+
+.cta-bg-service-gradient {
+    background: linear-gradient(180deg, #3333178f 0%, #0D0D0D 100%);
+    box-shadow: 0px 0px 75px 0px rgba(23, 36, 42, 0.08);
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+}
+
+
+.inner-hero-section{
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+.section-animation {
+    background: radial-gradient(100% 100% at 49% 99%, #0d0d0d 75%, transparent),radial-gradient(100% 100% at var(--65-x-position) var(--65-y-position), #534309 75%, transparent),#0d0d0d;
+    animation-name: main;
+    animation-iteration-count: infinite;
+    animation-duration: 8s;
+    transition-timing-function: ease-in-out
+}
+    
+@property --61-x-position { 
+    syntax: '<percentage>'; inherits: false; 
+    initial-value: 49.2694805194806%; 
+}
+
+@property --61-y-position { 
+    syntax: '<percentage>'; inherits: false; 
+    initial-value: 99.0234375%; 
+}
+
+@property --65-x-position { 
+    syntax: '<percentage>'; inherits: false; 
+    initial-value: 51.179991883117005%; 
+}
+
+@property --65-y-position { 
+    syntax: '<percentage>'; inherits: false; 
+    initial-value: 0%; 
+}
+    
+:root {
+    --4-x-position: 15.703125000000002%
+    --4-y-position: 29.414062500000004%
+    --5-x-position: 90.546875%
+    --5-y-position: 66.6796875%
+    --6-x-position: 15.703125000000002%
+    --6-y-position: 29.414062500000004%
+    --7-x-position: 94.44297889610387%
+    --7-y-position: 39.33593749999999%
+    --8-x-position: 9.047280844155841%
+    --8-y-position: 14.765625000000004%
+    --9-x-position: 94.44297889610387%
+    --9-y-position: 39.33593749999999%
+    --10-x-position: 9.047280844155841%
+    --10-y-position: 14.765625000000004%
+    --11-x-position: 89.89752435064948%
+    --11-y-position: 18.6328125%
+    --12-x-position: 9.047280844155841%
+    --12-y-position: 14.765625000000004%
+    --13-x-position: 49.313108766233924%
+    --13-y-position: 12.187500000000002%
+    --14-x-position: 73.49533279220778%
+    --14-y-position: 79.8046875%
+    --15-x-position: 49.313108766233924%
+    --15-y-position: 12.187500000000002%
+    --16-x-position: 73.49533279220778%
+    --16-y-position: 79.8046875%
+    --17-x-position: 51.42349837662352%
+    --17-y-position: 45%
+    --18-x-position: 70.65442370129871%
+    --18-y-position: 91.5234375%
+    --19-x-position: 51.42349837662352%
+    --19-y-position: 45%
+    --20-x-position: 70.65442370129871%
+    --20-y-position: 91.5234375%
+    --21-x-position: 61.08258928571443%
+    --21-y-position: 59.45312499999999%
+    --22-x-position: 99.59415584415584%
+    --22-y-position: 99.0234375%
+    --23-x-position: 61.08258928571443%
+    --23-y-position: 59.45312499999999%
+    --24-x-position: 99.59415584415584%
+    --24-y-position: 99.0234375%
+    --25-x-position: 99.59415584415584%
+    --25-y-position: 99.0234375%
+    --26-x-position: 61.08258928571443%
+    --26-y-position: 59.45312499999999%
+    --27-x-position: 56.737012987013024%
+    --27-y-position: 99.0234375%
+    --28-x-position: 61.08258928571443%
+    --28-y-position: 59.45312499999999%
+    --29-x-position: 56.737012987013024%
+    --29-y-position: 99.0234375%
+    --30-x-position: 55.725446428571544%
+    --30-y-position: 29.570312499999996%
+    --31-x-position: 56.737012987013024%
+    --31-y-position: 99.0234375%
+    --32-x-position: 50.530641233766374%
+    --32-y-position: 26.640624999999996%
+    --33-x-position: 50.1623376623377%
+    --33-y-position: 99.0234375%
+    --34-x-position: 50.530641233766374%
+    --34-y-position: 26.640624999999996%
+    --35-x-position: 97.24025974025984%
+    --35-y-position: 38.8671875%
+    --36-x-position: 50.530641233766374%
+    --36-y-position: 26.640624999999996%
+    --37-x-position: 97.24025974025984%
+    --37-y-position: 38.8671875%
+    --38-x-position: 88.43648538961051%
+    --38-y-position: 14.726562499999998%
+    --39-x-position: 43.58766233766245%
+    --39-y-position: 86.71875%
+    --40-x-position: 88.43648538961051%
+    --40-y-position: 14.726562499999998%
+    --41-x-position: 43.58766233766245%
+    --41-y-position: 86.71875%
+    --42-x-position: 57.2676542207793%
+    --42-y-position: 26.8359375%
+    --43-x-position: 43.58766233766245%
+    --43-y-position: 86.71875%
+    --44-x-position: 43.71245941558447%
+    --44-y-position: 69.21875%
+    --45-x-position: 43.425324675324795%
+    --45-y-position: 79.296875%
+    --46-x-position: 43.71245941558447%
+    --46-y-position: 69.21875%
+    --47-x-position: 43.425324675324795%
+    --47-y-position: 79.296875%
+    --48-x-position: 53.128043831168924%
+    --48-y-position: 58.08593749999999%
+    --49-x-position: 58.847402597402684%
+    --49-y-position: 78.7109375%
+    --50-x-position: 53.128043831168924%
+    --50-y-position: 58.08593749999999%
+    --51-x-position: 58.847402597402684%
+    --51-y-position: 78.7109375%
+    --52-x-position: 44.76765422077934%
+    --52-y-position: 84.2578125%
+    --53-x-position: 52.029220779220886%
+    --53-y-position: 0%
+    --54-x-position: 44.76765422077934%
+    --54-y-position: 84.2578125%
+    --55-x-position: 52.029220779220886%
+    --55-y-position: 0%
+    --56-x-position: 54.99492694805207%
+    --56-y-position: 21.367187499999996%
+    --57-x-position: 52.67857142857151%
+    --57-y-position: 99.0234375%
+    --58-x-position: 54.99492694805207%
+    --58-y-position: 21.367187499999996%
+    --59-x-position: 52.67857142857151%
+    --59-y-position: 99.0234375%
+    --60-x-position: 51.179991883117005%
+    --60-y-position: 0%
+    --61-x-position: 49.2694805194806%
+    --61-y-position: 99.0234375%
+    --62-x-position: 51.179991883117005%
+    --62-y-position: 0%
+    --63-x-position: 51.179991883117005%
+    --63-y-position: 0%
+    --64-x-position: 51.179991883117005%
+    --64-y-position: 0%
+    --65-x-position: 51.179991883117005%
+    --65-y-position: 0%
+}
+    
+@keyframes main { 
+
+    35% {
+        --65-x-position: 85%;
+        --65-y-position: 80%;
+    } 
 }
