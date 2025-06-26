@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { NgxParticlesModule } from '@tsparticles/angular';
@@ -100,52 +100,113 @@ export class HomeComponent implements OnInit {
     ];
 
     id = "tsparticles";
-    particlesOptions = {
-        fpsLimit: 180,
-        interactivity: {
-            events: {
-                onClick: { enable: true, mode: 'push' },
-                onHover: { enable: true, mode: 'repulse' },
-                resize: { enable: true }
-            },
-            modes: {
-                push: { quantity: 4 },
-                repulse: { distance: 200, duration: 0.8 }
-            }
-        },
-        particles: {
-            number: { value: 250 },
-            color: { value: "#ffffff" },
-            shape: { type: "circle" },
-            opacity: { value: 0.4 },
-            size: { value: { min: .25, max: 2 } },
-            move: {
-                enable: true,
-                speed: 3,
-                direction: "none" as "none",
-                outModes: { default: "bounce" as "bounce" },
-                random: false,
-                straight: false
-            },
-            links: {
-                enable: true,
-                color: "#ffffff",
-                distance: 200,
-                opacity: 0.3,
-                width: 1
-            }
-        },
-        detectRetina: true
-    };
+    particlesOptions: any = {};
+    isMobile = false;
+    isTablet = false;
+    isLaptop = false;
+    isLargeDesktop = false;
 
     constructor(private readonly ngParticlesService: NgParticlesService) {}
 
     async ngOnInit() {
+        this.updateParticlesOptions();
+        
         await this.ngParticlesService.init(async (engine) => {
             await loadSlim(engine);
         });
 
         this.selectedService = this.services[0];
+    }
+
+    @HostListener('window:resize', ['$event'])
+    onResize() {
+        this.updateParticlesOptions();
+    }
+
+    private updateParticlesOptions() {
+        const screenWidth = window.innerWidth;
+        
+        // Determine device type
+        this.isMobile = screenWidth < 768;
+        this.isTablet = screenWidth >= 768 && screenWidth < 1024;
+        this.isLaptop = screenWidth >= 1024 && screenWidth < 1440;
+        this.isLargeDesktop = screenWidth >= 1441;
+
+        // Adjust particle count based on screen size
+        let particleCount = 100;
+        let linkDistance = 150;
+        let repulseDistance = 150;
+        let particleSize = { min: 0.25, max: 2 };
+
+        if (this.isMobile) {
+            particleCount = 80;
+            linkDistance = 120;
+            repulseDistance = 100;
+            particleSize = { min: 0.1, max: 1.2 };
+        } else if (this.isTablet) {
+            particleCount = 100;
+            linkDistance = 100;
+            repulseDistance = 100;
+            particleSize = { min: 0.1, max: 1.2 };
+        } else if (this.isLaptop) {
+            particleCount = 80;
+            linkDistance = 100;
+            repulseDistance = 100;
+            particleSize = { min: 0.1, max: 1.2 };
+        } else if (this.isLargeDesktop) {
+            particleCount = 200;
+            linkDistance = 220;
+            repulseDistance = 220;
+            particleSize = { min: 0.25, max: 2.5 };
+        }
+
+        this.particlesOptions = {
+            fpsLimit: this.isMobile ? 60 : 180,
+            interactivity: {
+                events: {
+                    onClick: { enable: !this.isMobile, mode: 'push' },
+                    onHover: { enable: true, mode: 'repulse' },
+                    resize: { enable: true }
+                },
+                modes: {
+                    push: { quantity: this.isMobile ? 2 : 4 },
+                    repulse: { distance: repulseDistance, duration: 0.8 }
+                }
+            },
+            particles: {
+                number: { value: particleCount },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: { value: this.isMobile ? 0.3 : 0.4 },
+                size: { value: particleSize },
+                move: {
+                    enable: true,
+                    speed: this.isMobile ? 2 : 3,
+                    direction: "none" as "none",
+                    outModes: { default: "bounce" as "bounce" },
+                    random: false,
+                    straight: false
+                },
+                links: {
+                    enable: true,
+                    color: "#ffffff",
+                    distance: linkDistance,
+                    opacity: this.isMobile ? 0.2 : 0.3,
+                    width: this.isMobile ? 0.5 : 1
+                }
+            },
+            detectRetina: true
+        };
+
+        console.log('Particles options updated:', {
+            screenWidth,
+            isMobile: this.isMobile,
+            isTablet: this.isTablet,
+            isLaptop: this.isLaptop,
+            isLargeDesktop: this.isLargeDesktop,
+            particleCount,
+            particlesOptions: this.particlesOptions
+        });
     }
 
     selectService(service: any) {

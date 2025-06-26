@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class NavigationComponent {
   mobileMenuOpen = false;
+  mobileServicesDropdownOpen = false;
   servicesDropdownOpen = false;
   scrolled = false;
 
@@ -21,6 +22,18 @@ export class NavigationComponent {
 
   toggleMobileMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
+    // Close services dropdown when mobile menu is toggled
+    if (!this.mobileMenuOpen) {
+      this.mobileServicesDropdownOpen = false;
+    }
+  }
+
+  toggleMobileServicesDropdown() {
+    this.mobileServicesDropdownOpen = !this.mobileServicesDropdownOpen;
+  }
+
+  closeMobileServicesDropdown() {
+    this.mobileServicesDropdownOpen = false;
   }
 
   toggleServicesDropdown() {

@@ -14,38 +14,31 @@
             </a>
             
             <!-- Services Dropdown -->
-            <div class="relative" (mouseenter)="openServicesDropdown()" (mouseleave)="closeServicesDropdown()">
+            <div class="relative group">
                 <button class="no-underline text-brand-gray font-medium transition-colors duration-300 flex items-center gap-1 cursor-pointer bg-transparent border-none">
                     Services
-                    <svg class="w-4 h-4 transition-transform duration-300" [class.rotate-180]="servicesDropdownOpen" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                     </svg>
                 </button>
                 
                 <!-- Dropdown Menu -->
-                <div *ngIf="servicesDropdownOpen" 
-                     class="absolute top-full left-0 mt-2 w-48 bg-brand-dark border border-gray-700 rounded-lg shadow-lg z-50"
-                     (mouseenter)="openServicesDropdown()" 
-                     (mouseleave)="closeServicesDropdown()">
-                    <div class="py-2">
+                <div class="absolute top-full left-0 mt-0 w-48 bg-brand-dark border border-gray-700 rounded-lg shadow-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                    <div class="p-1">
                         <a routerLink="/web-development" routerLinkActive="active" 
-                           class="block px-4 py-2 text-brand-gray hover:text-white hover:bg-gray-800 transition-colors duration-200 no-underline"
-                           (click)="closeServicesDropdown()">
+                           class="block rounded-md px-4 py-2 text-brand-gray hover:text-white hover:bg-gray-800 transition-colors duration-200 no-underline">
                             Web Development
                         </a>
                         <a routerLink="/mobile-application" routerLinkActive="active" 
-                           class="block px-4 py-2 text-brand-gray hover:text-white hover:bg-gray-800 transition-colors duration-200 no-underline"
-                           (click)="closeServicesDropdown()">
+                           class="block rounded-md px-4 py-2 text-brand-gray hover:text-white hover:bg-gray-800 transition-colors duration-200 no-underline">
                             Mobile App
                         </a>
                         <a routerLink="/ui-ux-design" routerLinkActive="active" 
-                           class="block px-4 py-2 text-brand-gray hover:text-white hover:bg-gray-800 transition-colors duration-200 no-underline"
-                           (click)="closeServicesDropdown()">
+                           class="block rounded-md px-4 py-2 text-brand-gray hover:text-white hover:bg-gray-800 transition-colors duration-200 no-underline">
                             UI/UX
                         </a>
                         <a routerLink="/social-media-marketing" routerLinkActive="active" 
-                           class="block px-4 py-2 text-brand-gray hover:text-white hover:bg-gray-800 transition-colors duration-200 no-underline"
-                           (click)="closeServicesDropdown()">
+                           class="block rounded-md px-4 py-2 text-brand-gray hover:text-white hover:bg-gray-800 transition-colors duration-200 no-underline">
                             Social Media
                         </a>
                     </div>
@@ -87,11 +80,39 @@
             
             <!-- Mobile Services Section -->
             <div class="flex flex-col gap-2">
-                <span class="text-brand-gray font-medium text-sm uppercase tracking-wide">Services</span>
-                <a routerLink="/web-development" routerLinkActive="active" class="no-underline text-brand-gray font-medium pl-4" (click)="toggleMobileMenu()">Web Development</a>
-                <a routerLink="/mobile-application" routerLinkActive="active" class="no-underline text-brand-gray font-medium pl-4" (click)="toggleMobileMenu()">Mobile App</a>
-                <a routerLink="/ui-ux-design" routerLinkActive="active" class="no-underline text-brand-gray font-medium pl-4" (click)="toggleMobileMenu()">UI/UX</a>
-                <a routerLink="/social-media-marketing" routerLinkActive="active" class="no-underline text-brand-gray font-medium pl-4" (click)="toggleMobileMenu()">Social Media</a>
+                <button class="flex justify-between items-center text-brand-gray font-medium text-left bg-transparent border-none cursor-pointer" 
+                        (click)="toggleMobileServicesDropdown()">
+                    <span class="text-sm uppercase tracking-wide">Services</span>
+                    <svg class="w-4 h-4 transition-transform duration-300" 
+                         [class.rotate-180]="mobileServicesDropdownOpen" 
+                         fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                
+                <!-- Mobile Services Dropdown -->
+                <div *ngIf="mobileServicesDropdownOpen" class="flex flex-col gap-2 mt-2 ml-4 border-l border-gray-700 pl-4">
+                    <a routerLink="/web-development" routerLinkActive="active" 
+                       class="no-underline text-brand-gray font-medium py-1" 
+                       (click)="toggleMobileMenu(); closeMobileServicesDropdown()">
+                        Web Development
+                    </a>
+                    <a routerLink="/mobile-application" routerLinkActive="active" 
+                       class="no-underline text-brand-gray font-medium py-1" 
+                       (click)="toggleMobileMenu(); closeMobileServicesDropdown()">
+                        Mobile App
+                    </a>
+                    <a routerLink="/ui-ux-design" routerLinkActive="active" 
+                       class="no-underline text-brand-gray font-medium py-1" 
+                       (click)="toggleMobileMenu(); closeMobileServicesDropdown()">
+                        UI/UX
+                    </a>
+                    <a routerLink="/social-media-marketing" routerLinkActive="active" 
+                       class="no-underline text-brand-gray font-medium py-1" 
+                       (click)="toggleMobileMenu(); closeMobileServicesDropdown()">
+                        Social Media
+                    </a>
+                </div>
             </div>
             
             <a routerLink="/projects" routerLinkActive="active" class="no-underline text-brand-gray font-medium" (click)="toggleMobileMenu()">Projects</a>
