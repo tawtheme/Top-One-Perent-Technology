@@ -7,6 +7,11 @@ export default {
 
     theme: {
         extend: {
+            screens: {
+                'xs': '475px',
+                'xl': '1280px',
+                '2xl': '1536px',
+            },
             fontFamily: {
                 'sans': ['"Instrument Sans"', 'sans-serif'],
                 'grotesk': ['"Space Grotesk"', 'sans-serif'],

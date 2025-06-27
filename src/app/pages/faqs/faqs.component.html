@@ -9,23 +9,13 @@
                     <div class="uppercase tracking-widest text-lg text-white/80">Frequently Asked Questions</div>
                     <h1 class="text-6xl font-bold leading-tight">Got questions?<br>We've got answers!</h1>
                 </div>
-                <div class="flex flex-col gap-6">
-                    <div class="contact-card-bg rounded-3xl border border-[#333] p-6">
-                        <div class="text-white/70 text-base mb-1">Quick Contact</div>
-                        <div class="text-white text-xl font-semibold">info&#64;toponepercent.com</div>
-                    </div>
-                    <div class="contact-card-bg rounded-3xl border border-[#333] p-6">
-                        <div class="text-white/70 text-base mb-1">Need more help?</div>
-                        <div class="text-white text-xl font-semibold">Schedule a call</div>
-                    </div>
-                </div>
             </div>
             
             <!-- Right Column - FAQ Accordion -->
             <div class="w-full">
-                <div class="faq-accordion space-y-4">
-                    <div *ngFor="let faq of faqs; let i = index" class="faq-item contact-card-bg border border-[#333] rounded-xl overflow-hidden">
-                        <button (click)="toggleFAQ(i)" class="w-full text-left p-6 flex justify-between items-center hover:bg-[#222] transition-colors">
+                <div class="faq-accordion">
+                    <div *ngFor="let faq of faqs; let i = index" class="faq-item contact-card-bg border-[#333] rounded-3xl overflow-hidden">
+                        <button (click)="toggleFAQ(i)" class="w-full text-left p-6 flex justify-between items-center">
                             <span class="text-white font-semibold">{{ faq.question }}</span>
                             <span class="text-white text-2xl transition-transform duration-300" [class.rotate-45]="faqOpen[i]">+</span>
                         </button>

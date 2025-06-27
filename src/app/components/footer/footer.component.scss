@@ -2,8 +2,104 @@
     border-radius: 50px;
     background: linear-gradient(180deg, #3333178f 0%, rgba(0, 0, 0, 0.00) 100%);
     box-shadow: 0px 0px 75px 0px rgba(23, 36, 42, 0.08);
+    
+    @media (max-width: 640px) {
+        border-radius: 24px;
+    }
 }
 
 .copyright-border {
     border-top: 1px solid #3333178f;
+}
+
+// Responsive footer improvements
+footer {
+    // Responsive typography for footer headings
+    h2, h4 {
+        line-height: 1.1;
+        font-weight: 700;
+        
+        @media (max-width: 475px) {
+            line-height: 1.05;
+        }
+    }
+    
+    // Responsive link improvements
+    a {
+        transition: all 0.3s ease;
+        
+        &:hover {
+            transform: translateY(-1px);
+        }
+        
+        @media (max-width: 640px) {
+            &:hover {
+                transform: none;
+            }
+        }
+    }
+    
+    // Responsive button improvements
+    button {
+        transition: all 0.3s ease;
+        
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 253, 115, 0.3);
+        }
+        
+        @media (max-width: 640px) {
+            &:hover {
+                transform: none;
+                box-shadow: none;
+            }
+        }
+    }
+    
+    // Responsive grid improvements
+    .grid {
+        @media (max-width: 640px) {
+            gap: 2rem;
+        }
+    }
+    
+    // Responsive spacing for contact info
+    .flex.items-center {
+        @media (max-width: 640px) {
+            gap: 0.75rem;
+        }
+    }
+    
+    // Responsive social media icons
+    .flex.gap-3, .flex.gap-4 {
+        a {
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            
+            &:hover {
+                background-color: rgba(255, 253, 115, 0.1);
+            }
+            
+            @media (max-width: 640px) {
+                padding: 0.375rem;
+            }
+        }
+    }
+}
+
+// Responsive content wrapper
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+// Responsive CTA section
+.cta-bg-service-gradient {
+    @media (max-width: 768px) {
+        margin: 0 1rem;
+    }
+    
+    @media (max-width: 640px) {
+        margin: 0 0.5rem;
+    }
 }
