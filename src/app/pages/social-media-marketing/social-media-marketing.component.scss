@@ -16,6 +16,19 @@
         padding-top: 100px;
         padding-bottom: 40px;
     }
+
+    .content{
+        padding-right: 30%;
+
+        @media (max-width: 1440px) {
+            padding-right: 10%;
+        }
+
+        @media (max-width: 1024px) {
+            padding-right: 0%;
+        }
+
+    }
 }
 
 .image-container{
@@ -36,7 +49,7 @@
 }
 
 .features-section-container{
-    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 50px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 50px;
 
     @media (max-width: 1440px) {
         grid-template-columns: 1fr 1fr;
@@ -78,7 +91,8 @@
 .portfolio-section{
     display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 50px;
 
-    @media (max-width: 1440px) {
+
+    @media (max-width: 1600px) {
         grid-template-columns: 1fr 1fr;
         gap: 40px;
     }
@@ -86,10 +100,6 @@
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
         gap: 20px;
-    }
-    
-    @media (max-width: 480px) {
-        gap: 16px;
     }
 }
 
