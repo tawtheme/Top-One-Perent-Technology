@@ -1,25 +1,25 @@
 <div class="text-white font-sans min-h-screen">
 
     <!-- Hero Section -->
-    <section class="inner-hero-section section-animation relative overflow-hidden px-5 text-left">
-        <div class="w-full mx-auto md:w-4/5 contact-wrapper">
+    <section class="faqs-inner-hero-section section-animation relative overflow-hidden px-3 sm:px-5 text-left">
+        <div class="w-full mx-auto px-4 sm:px-6 md:w-4/5 contact-wrapper">
             <!-- Left Column -->
-            <div class="flex flex-col gap-6 justify-center">
+            <div class="flex flex-col gap-4 sm:gap-6 justify-center">
                 <div class="flex flex-col gap-2">
-                    <div class="uppercase tracking-widest text-lg text-white/80">Frequently Asked Questions</div>
-                    <h1 class="text-6xl font-bold leading-tight">Got questions?<br>We've got answers!</h1>
+                    <div class="uppercase tracking-widest text-xs sm:text-sm md:text-base lg:text-lg text-white/80">Frequently Asked Questions</div>
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight sm:leading-tight md:leading-tight lg:leading-tight">Got questions?<br class="hidden sm:block">We've got answers!</h1>
                 </div>
             </div>
             
             <!-- Right Column - FAQ Accordion -->
             <div class="w-full">
                 <div class="faq-accordion">
-                    <div *ngFor="let faq of faqs; let i = index" class="faq-item contact-card-bg border-[#333] rounded-3xl overflow-hidden">
-                        <button (click)="toggleFAQ(i)" class="w-full text-left p-6 flex justify-between items-center">
-                            <span class="text-white font-semibold">{{ faq.question }}</span>
-                            <span class="text-white text-2xl transition-transform duration-300" [class.rotate-45]="faqOpen[i]">+</span>
+                    <div *ngFor="let faq of faqs; let i = index" class="faq-item contact-card-bg border-[#333] rounded-2xl sm:rounded-3xl overflow-hidden">
+                        <button (click)="toggleFAQ(i)" class="w-full text-left p-4 sm:p-6 flex justify-between items-center">
+                            <span class="text-white font-semibold text-sm sm:text-base md:text-lg">{{ faq.question }}</span>
+                            <span class="text-white text-lg sm:text-xl md:text-2xl transition-transform duration-300" [class.rotate-45]="faqOpen[i]">+</span>
                         </button>
-                        <div *ngIf="faqOpen[i]" class="px-6 pb-6 text-gray-300 leading-relaxed">
+                        <div *ngIf="faqOpen[i]" class="px-4 sm:px-6 pb-4 sm:pb-6 text-gray-300 leading-relaxed text-sm sm:text-base">
                             {{ faq.answer }}
                         </div>
                     </div>

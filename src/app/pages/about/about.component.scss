@@ -8,13 +8,53 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .our-values-section {
+        gap: 48px;
+        grid-template-columns: 1fr 1fr;
+    }
+    .our-values-section .values-card {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .our-values-section {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .our-values-section .values-card {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .our-values-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .our-values-section .values-card {
+        padding: 12px;
+    }
+}
+
 .team-wrapper{
     display: flex; flex-direction: column; justify-content: center; align-items: center;
     text-align: center;
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    .team-wrapper {
+        padding: 0.5rem;
+    }
 }
 
 .story-image{
     transform: perspective(1000px) rotateY(10deg);
+    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 /* Gallery Grid Styles */
@@ -27,6 +67,7 @@
         object-fit: cover;
         border-radius: 30px;
         transition: transform 0.3s ease;
+        max-width: 100%;
     }
 }
 
