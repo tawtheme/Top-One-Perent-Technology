@@ -1,3 +1,46 @@
+.about-story-section{
+    display: grid; grid-template-columns: 1fr 1fr; gap: 50px;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    @media (max-width: 768px) {
+        gap: 24px;
+    }
+}
+
+.about-counter-section{
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 50px;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+    
+}
+
+.team-section{
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap: 50px;
+
+    @media (max-width: 1600px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 48px;
+    }
+
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+    }
+    
+}
+
+
 .our-values-section{
     display: grid; grid-template-columns: 1.5fr 2fr; gap: 120px;
 

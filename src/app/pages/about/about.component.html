@@ -1,11 +1,11 @@
 <div class="text-white font-sans min-h-screen">
 
     <!-- Hero Section -->
-    <section class="inner-hero-section section-animation relative overflow-hidden px-5 text-left">
+    <section class="inner-hero-section section-animation relative overflow-hidden px-3 sm:px-5 text-left">
         <div class="content-wrapper w-full mx-auto px-4 sm:px-6 md:w-4/5">
             <!-- Content -->
             <div class="content">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8">
                     Empowering businesses with <br class="hidden sm:block">results-driven web design<br class="hidden sm:block"> that outranks competitors
                 </h1>
                 <button class="bg-brand-light text-brand-dark border-none py-3 sm:py-4 px-6 sm:px-8 font-bold cursor-pointer inline-flex items-center gap-2 sm:gap-2.5 text-sm sm:text-base rounded-md">
@@ -20,21 +20,43 @@
         <!-- Story Section -->
         <section class="px-3 sm:px-5 cta-bg-service-gradient section-padding">
             <div class="content-wrapper w-full mx-auto px-4 sm:px-6 md:w-4/5">
-                <div class="text-center mb-12 sm:mb-16 md:mb-20">
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-5">Our core agency services</h2>
-                    <p class="text-brand-gray mb-6 sm:mb-8 md:mb-10 px-4 sm:px-8 md:px-16 text-sm sm:text-base">
-                        Discover the services we offer that help digitally transform our clients businesses. <br class="hidden sm:block">Our core agency service offering includes web development, branding, SEO and digital paid ads and some other additional services too.
-                    </p>    
-                </div>
-                <div class="grid grid-cols-1 items-center md:grid-cols-2 md:gap-8 lg:gap-16">
-                    <div class="flex-1 w-full mt-6 sm:mt-8 md:mt-0">
+                <div class="about-story-section">
+                    <div class="flex-1 w-full mt-6 sm:mt-8 lg:mt-0">
                         <video #aboutVideo src="assets/video/video-about.mp4" class="rounded-2xl w-full story-image" autoplay muted loop playsinline preload="auto"></video>
                     </div>
-                    <div class="flex flex-col gap-4 sm:gap-6 md:gap-8 text-sm sm:text-base">
-                        <p>Discover the services we offer that help digitally transform our clients' businesses. Our core agency service offering includes web development, branding, SEO and digital paid ads and some other additional services too.</p>
-                        <p>They eventually decided to leave their jobs to focus their efforts full-time on building a Google Slides competitor. The first several months were difficult. Guillaume was working from Montreal and Steven was working from New York, and they struggled to find a solution that would enable them to build a tool with the multiplayer functionality that was so critical. The tools they did manage to find had myriad problems. They didn't integrate easily into their infrastructure, made it difficult to build a version history panel and multiplayer undo/redo, were optimized for text collaboration rather than layer-based creative tools and required them to cobble multiple services together in order to have something work end-to-end.</p>
-                        <p>Eventually they decided to create their own. Along the way, they realized that if they were having this problem, other companies must be as well. And so they decided to drop the presentation tool, and focus on turning the powerful backend they'd built into a set of APIs that any team could use to build realtime collaborative products.</p>
-                        <p>And that's how Liveblocks was born.</p>
+                    <div class="flex flex-col gap-4 sm:gap-6 lg:gap-8 text-sm sm:text-base">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-5">About Our Digital Agency</h2>  
+                        <p>Founded with a vision to bridge the gap between technology and business success, our agency has grown into a trusted partner for businesses seeking digital transformation. We understand that in today's competitive landscape, having a strong digital presence is not just an option—it's essential for survival and growth.</p>
+                        <p>Our team of experienced professionals brings together expertise in web development, mobile app development, UI/UX design, digital marketing, and SEO optimization. We work closely with our clients to understand their unique challenges, goals, and target audiences, ensuring that every solution we create is tailored to their specific needs and objectives.</p>
+                        <p>What sets us apart is our commitment to delivering not just beautiful designs or functional websites, but comprehensive digital solutions that drive measurable business results. We believe in the power of data-driven decisions, user-centered design, and continuous optimization to ensure our clients achieve sustainable growth and competitive advantage in their respective markets.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise & Achievements Section -->
+        <section #expertiseSection class="px-3 sm:px-5 section-padding">
+            <div class="content-wrapper w-full mx-auto px-4 sm:px-6 md:w-4/5">
+                <div class="about-counter-section">
+                    <div class="text-center">
+                        <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-brand-light mb-2">{{ projectsCompleted | number:'1.0-0' }}+</div>
+                        <h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2">Projects Completed</h3>
+                        <p class="text-brand-gray text-xs sm:text-sm md:text-base">Successfully delivered projects across various industries and business sizes</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-brand-light mb-2">{{ clientSatisfaction | number:'1.0-0' }}%</div>
+                        <h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2">Client Satisfaction</h3>
+                        <p class="text-brand-gray text-xs sm:text-sm md:text-base">Consistently high satisfaction rates from our valued clients</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-brand-light mb-2">{{ yearsExperience | number:'1.0-0' }}+</div>
+                        <h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2">Years Experience</h3>
+                        <p class="text-brand-gray text-xs sm:text-sm md:text-base">Deep industry knowledge and proven track record of success</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-brand-light mb-2">{{ supportAvailable | number:'1.0-0' }}/7</div>
+                        <h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2">Support Available</h3>
+                        <p class="text-brand-gray text-xs sm:text-sm md:text-base">Round-the-clock support and maintenance for all our clients</p>
                     </div>
                 </div>
             </div>
@@ -42,12 +64,12 @@
 
         <!-- Gallery Section -->
         <section class="px-3 sm:px-5 section-padding">
-            <div class="content-wrapper w-full mx-auto px-4 sm:px-6 md:w-12/6">
-                <div class="gallery-grid">
-                    <img src="assets/images/about-activity-image-1.png" alt="Gallery 1" class="gallery-item">
-                    <img src="assets/images/about-activity-image-2.png" alt="Gallery 2" class="gallery-item">
-                    <img src="assets/images/about-activity-image-3.png" alt="Gallery 3" class="gallery-item">
-                    <img src="assets/images/about-activity-image-4.png" alt="Gallery 4" class="gallery-item">
+            <div class="content-wrapper w-full mx-auto px-4 sm:px-6 md:w-4/5">
+                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
+                    <img src="assets/images/about-activity-image-1.png" alt="Gallery 1" class="gallery-item rounded-lg sm:rounded-xl lg:rounded-2xl">
+                    <img src="assets/images/about-activity-image-2.png" alt="Gallery 2" class="gallery-item rounded-lg sm:rounded-xl lg:rounded-2xl">
+                    <img src="assets/images/about-activity-image-3.png" alt="Gallery 3" class="gallery-item rounded-lg sm:rounded-xl lg:rounded-2xl">
+                    <img src="assets/images/about-activity-image-4.png" alt="Gallery 4" class="gallery-item rounded-lg sm:rounded-xl lg:rounded-2xl">
                 </div>
             </div>
         </section>
@@ -56,24 +78,28 @@
         <section class="px-3 sm:px-5 section-padding">
             <div class="content-wrapper w-full mx-auto px-4 sm:px-6 md:w-4/5">
                 <div class="our-values-section">
-                    <div class="mb-12 sm:mb-16 md:mb-20">
-                        <h2 class="text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 md:mb-8">Our values are the catalyst for all of our endeavors</h2>
-                        <p class="text-brand-gray mb-6 sm:mb-8 md:mb-10 text-sm sm:text-base">
-                            Discover the services we offer that help digitally transform our clients businesses. <br class="hidden sm:block">Our core agency service offering includes web development, branding, SEO and digital paid ads and some other additional services too.
+                    <div class="mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+                        <h2 class="text-left text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 lg:mb-8">Our core values drive every project and decision we make</h2>
+                        <p class="text-brand-gray mb-4 sm:mb-6 md:mb-8 lg:mb-10 text-sm sm:text-base">
+                            Our values are the foundation of our success and the guiding principles that shape our approach to digital transformation. We believe in creating meaningful partnerships with our clients, delivering innovative solutions that drive real business results, and maintaining the highest standards of quality and professionalism in everything we do.
                         </p>    
                     </div>
-                    <div class="flex flex-col gap-8 sm:gap-12 md:gap-16">
+                    <div class="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12">
                         <div class="values-card">
-                            <h3 class="text-base sm:text-lg font-bold mb-2">Innovation</h3>
-                            <p class="text-gray-300 text-sm sm:text-base">We constantly explore new technologies and approaches to deliver the best solutions.</p>
+                            <h3 class="text-sm sm:text-base md:text-lg font-bold mb-2">Innovation & Excellence</h3>
+                            <p class="text-gray-300 text-xs sm:text-sm md:text-base">We constantly explore cutting-edge technologies, emerging trends, and innovative approaches to deliver exceptional digital solutions. Our team stays ahead of industry developments, embracing new methodologies and tools to create forward-thinking websites, mobile applications, and digital marketing strategies that give our clients a competitive advantage in the digital landscape.</p>
                         </div>
                         <div class="values-card">
-                            <h3 class="text-base sm:text-lg font-bold mb-2">Openness</h3>
-                            <p class="text-gray-300 text-sm sm:text-base">We believe in working together with our clients to achieve shared success.</p>
+                            <h3 class="text-sm sm:text-base md:text-lg font-bold mb-2">Collaboration & Partnership</h3>
+                            <p class="text-gray-300 text-xs sm:text-sm md:text-base">We believe in building strong, transparent partnerships with our clients based on mutual trust and shared goals. Our collaborative approach involves working closely with you throughout every phase of your project, from initial concept to final delivery and beyond. We value your input, respect your vision, and ensure your voice is heard in every decision we make together.</p>
                         </div>
                         <div class="values-card">
-                            <h3 class="text-base sm:text-lg font-bold mb-2">Reliability</h3>
-                            <p class="text-gray-300 text-sm sm:text-base">We strive for excellence in everything we do, from code quality to user experience.</p>
+                            <h3 class="text-sm sm:text-base md:text-lg font-bold mb-2">Quality & Reliability</h3>
+                            <p class="text-gray-300 text-xs sm:text-sm md:text-base">We maintain the highest standards of quality in every aspect of our work, from code architecture and user experience design to project management and client communication. Our commitment to reliability means delivering projects on time, within budget, and exceeding expectations. We take pride in creating digital solutions that are not only visually stunning but also technically robust, scalable, and built to last.</p>
+                        </div>
+                        <div class="values-card">
+                            <h3 class="text-sm sm:text-base md:text-lg font-bold mb-2">Results-Driven Approach</h3>
+                            <p class="text-gray-300 text-xs sm:text-sm md:text-base">Every project we undertake is focused on achieving measurable business outcomes and driving real value for our clients. We don't just create beautiful websites or engaging social media campaigns – we develop strategic digital solutions that increase brand awareness, generate leads, improve conversion rates, and contribute directly to your business growth and success in the digital marketplace.</p>
                         </div>
                     </div>
                 </div>
@@ -83,29 +109,34 @@
         <!-- Team Section -->
         <section class="px-3 sm:px-5 cta-bg-service-gradient section-padding">
             <div class="content-wrapper w-full mx-auto px-4 sm:px-6 md:w-4/5">
-                <div class="text-center mb-12 sm:mb-16 md:mb-20">
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-5">Meet Our Team</h2>
+                <div class="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-5">Meet Our Team</h2>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 md:gap-16">
+                <div class="team-section">
                     <div class="team-wrapper">
-                        <img src="assets/images/team-image.png" alt="Team 1" class="object-cover mb-4 w-full h-auto">
-                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-1 mt-3">Mohamadi Tapsoba</h3>
-                        <p class="text-gray-200 text-sm sm:text-base">Founder and Co-Founder</p>
+                        <img src="assets/images/mohamadi.png" alt="Mohamadi Tapsoba" class="object-cover rounded-2xl sm:rounded-3xl mb-3 sm:mb-4 w-full h-auto">
+                        <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-1 mt-2 sm:mt-3">Mohamadi Tapsoba</h3>
+                        <p class="text-gray-200 text-xs sm:text-sm md:text-base">Founder and Co-Founder</p>
                     </div>
                     <div class="team-wrapper">
-                        <img src="assets/images/team-image.png" alt="Team 1" class="object-cover mb-4 w-full h-auto">
-                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-1 mt-3">Nirmal Singh</h3>
-                        <p class="text-gray-200 text-sm sm:text-base">Co-Founder</p>
+                        <img src="assets/images/nirmal-singh.png" alt="Nirmal Singh" class="object-cover rounded-2xl sm:rounded-3xl mb-3 sm:mb-4 w-full h-auto">
+                        <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-1 mt-2 sm:mt-3">Nirmal Singh</h3>
+                        <p class="text-gray-200 text-xs sm:text-sm md:text-base">Co-Founder</p>
                     </div>
                     <div class="team-wrapper">
-                        <img src="assets/images/team-image.png" alt="Team 1" class="object-cover mb-4 w-full h-auto">
-                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-1 mt-3">Nirmat Saini</h3>
-                        <p class="text-gray-200 text-sm sm:text-base">Project Manager</p>
+                        <img src="assets/images/nimrat-saini.png" alt="Nirmat Saini" class="object-cover rounded-2xl sm:rounded-3xl mb-3 sm:mb-4 w-full h-auto">
+                        <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-1 mt-2 sm:mt-3">Nirmat Saini</h3>
+                        <p class="text-gray-200 text-xs sm:text-sm md:text-base">Project Manager</p>
                     </div>
                     <div class="team-wrapper">
-                        <img src="assets/images/team-image.png" alt="Team 1" class="object-cover mb-4 w-full h-auto">
-                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-1 mt-3">Nirmat Saini</h3>
-                        <p class="text-gray-200 text-sm sm:text-base">Project Manager</p>
+                        <img src="assets/images/praveen-singh.png" alt="Praveen Singh" class="object-cover rounded-2xl sm:rounded-3xl mb-3 sm:mb-4 w-full h-auto">
+                        <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-1 mt-2 sm:mt-3">Praveen Singh</h3>
+                        <p class="text-gray-200 text-xs sm:text-sm md:text-base">Technical Lead</p>
+                    </div>
+                    <div class="team-wrapper">
+                        <img src="assets/images/parminder-singh.png" alt="Parmind Singh" class="object-cover rounded-2xl sm:rounded-3xl mb-3 sm:mb-4 w-full h-auto">
+                        <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-1 mt-2 sm:mt-3">Parmind Singh</h3>
+                        <p class="text-gray-200 text-xs sm:text-sm md:text-base">Graphic Designer</p>
                     </div>
                 </div>
             </div>
