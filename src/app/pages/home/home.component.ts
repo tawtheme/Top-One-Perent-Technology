@@ -71,6 +71,7 @@ export class HomeComponent implements OnInit {
     ];
 
     selectedService: any;
+    
     faqs = [
         {
             question: 'What services do you offer?',
@@ -209,11 +210,11 @@ export class HomeComponent implements OnInit {
         });
     }
 
-    selectService(service: any) {
-        this.selectedService = service;
-    }
-
     toggleFaq(index: number) {
         this.faqs[index].open = !this.faqs[index].open;
+    }
+
+    selectService(service: any) {
+        this.selectedService = service;
     }
 }
