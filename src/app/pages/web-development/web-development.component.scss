@@ -16,30 +16,21 @@
         padding-top: 100px;
         padding-bottom: 40px;
     }
-
-    .content{
-        padding-right: 30%;
-
-        @media (max-width: 1440px) {
-            padding-right: 10%;
-        }
-
-        @media (max-width: 1024px) {
-            padding-right: 0%;
-        }
-
-    }
 }
 
 .image-container{
-    display: grid; grid-template-columns: 1fr 1fr; gap: 50px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;
+
+    @media (max-width: 1440px) {
+        grid-template-columns: 1fr;
+    }
     
     @media (max-width: 1024px) {
+        grid-template-columns: 1fr;
         gap: 30px;
     }
     
     @media (max-width: 768px) {
-        grid-template-columns: 1fr;
         gap: 20px;
     }
     
