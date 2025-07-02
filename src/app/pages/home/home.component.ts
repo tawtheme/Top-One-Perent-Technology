@@ -50,22 +50,22 @@ export class HomeComponent implements OnInit {
     services = [
         {
             title: 'Web Development',
-            description: 'We create custom websites and web applications that are fast, secure, and user-friendly. Our development team uses the latest technologies to build scalable solutions.',
+            description: 'We create custom websites and web applications that are fast, secure, and user-friendly. Our development team uses the latest technologies to build scalable solutions that drive business growth. From responsive design to complex e-commerce platforms, we deliver cutting-edge digital experiences that engage users and convert visitors into customers.',
             imageUrl: 'assets/images/web-development.png'
         },
         {
             title: 'Branding',
-            description: 'We help businesses establish a strong brand identity through strategic design, messaging, and visual elements that resonate with their target audience.',
+            description: 'We help businesses establish a strong brand identity through strategic design, messaging, and visual elements that resonate with their target audience. Our comprehensive branding services include logo design, brand guidelines, visual identity systems, and brand strategy development to create memorable and impactful brand experiences that differentiate you from competitors.',
             imageUrl: 'assets/images/web-development.png'
         },
         {
             title: 'SEO',
-            description: 'Our SEO services help improve your website\'s visibility in search engines, driving more organic traffic and increasing your online presence.',
+            description: 'Our SEO services help improve your website\'s visibility in search engines, driving more organic traffic and increasing your online presence. We implement comprehensive search engine optimization strategies including keyword research, on-page optimization, technical SEO, content marketing, and local SEO to boost your rankings and attract qualified leads.',
             imageUrl: 'assets/images/web-development.png'
         },
         {
             title: 'Digital Ads',
-            description: 'We manage digital advertising campaigns across various platforms to help you reach your target audience and achieve your marketing goals.',
+            description: 'We manage digital advertising campaigns across various platforms to help you reach your target audience and achieve your marketing goals. Our digital advertising expertise spans Google Ads, social media advertising, display campaigns, and remarketing strategies designed to maximize ROI and drive measurable business results.',
             imageUrl: 'assets/images/web-development.png'
         }
     ];

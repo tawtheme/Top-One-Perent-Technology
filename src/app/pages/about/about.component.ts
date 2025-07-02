@@ -33,6 +33,9 @@ export class AboutComponent implements AfterViewInit {
     const video = this.aboutVideo?.nativeElement;
     if (!video) return;
 
+    // Ensure loop is enabled
+    video.loop = true;
+
     // Try to play the video immediately
     const playPromise = video.play();
     
@@ -63,6 +66,15 @@ export class AboutComponent implements AfterViewInit {
       console.log('Video data loaded');
       video.play().catch(error => {
         console.log('Play failed on loadeddata event:', error);
+      });
+    });
+
+    // Ensure video restarts when it ends
+    video.addEventListener('ended', () => {
+      console.log('Video ended, restarting...');
+      video.currentTime = 0;
+      video.play().catch(error => {
+        console.log('Failed to restart video:', error);
       });
     });
   }

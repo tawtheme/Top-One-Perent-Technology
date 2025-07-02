@@ -8,8 +8,13 @@
                 <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8">
                     Empowering businesses with <br class="hidden sm:block">results-driven web design<br class="hidden sm:block"> that outranks competitors
                 </h1>
-                <button routerLink="/contact" class="bg-brand-light text-brand-dark border-none py-3 sm:py-4 px-6 sm:px-8 font-bold cursor-pointer inline-flex items-center gap-2 sm:gap-2.5 text-sm sm:text-base rounded-md">
-                    Start your project <span>&#8599;</span>
+                <button routerLink="/contact" class="bg-brand-light text-brand-dark border-none py-3 sm:py-4 px-6 sm:px-6 font-bold cursor-pointer inline-flex items-center gap-2 sm:gap-2.5 text-sm sm:text-base rounded-md">
+                    Start your project
+                    <span class="inline-block bg-[#222] rounded-md p-1.5 sm:p-2 ml-1 sm:ml-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-2 h-2 sm:w-3 sm:h-3 text-yellow-300">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M7 7h10v10" />
+                        </svg>
+                    </span>
                 </button>
             </div>
         </div>
@@ -22,7 +27,7 @@
             <div class="content-wrapper w-full mx-auto px-4 sm:px-6 md:w-4/5">
                 <div class="about-story-section">
                     <div class="flex-1 w-full mt-6 sm:mt-8 lg:mt-0">
-                        <video #aboutVideo src="assets/video/video-about.mp4" class="rounded-2xl w-full story-image" autoplay muted loop playsinline preload="auto"></video>
+                        <video #aboutVideo src="assets/video/video-about.mp4" class="rounded-2xl w-full story-image" autoplay muted loop playsinline preload="auto" controls="false"></video>
                     </div>
                     <div class="flex flex-col gap-4 sm:gap-6 lg:gap-8 text-sm sm:text-base">
                         <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-5">About Our Digital Agency</h2>  
@@ -78,7 +83,7 @@
         <section class="px-3 sm:px-5 section-padding">
             <div class="content-wrapper w-full mx-auto px-4 sm:px-6 md:w-4/5">
                 <div class="our-values-section">
-                    <div class="mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+                    <div class="sticky-values-left mb-8 sm:mb-12 md:mb-16 lg:mb-20">
                         <h2 class="text-left text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 lg:mb-8">Our core values drive every project and decision we make</h2>
                         <p class="text-brand-gray mb-4 sm:mb-6 md:mb-8 lg:mb-10 text-sm sm:text-base">
                             Our values are the foundation of our success and the guiding principles that shape our approach to digital transformation. We believe in creating meaningful partnerships with our clients, delivering innovative solutions that drive real business results, and maintaining the highest standards of quality and professionalism in everything we do.
