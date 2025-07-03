@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-web-development',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './web-development.component.html',
   styleUrl: './web-development.component.scss'
 })

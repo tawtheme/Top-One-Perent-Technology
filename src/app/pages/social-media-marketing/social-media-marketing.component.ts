@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-social-media-marketing',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './social-media-marketing.component.html',
   styleUrl: './social-media-marketing.component.scss'
 })

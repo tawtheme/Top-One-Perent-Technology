@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { NgxParticlesModule } from '@tsparticles/angular';
 import { NgParticlesService } from '@tsparticles/angular';
@@ -8,7 +9,7 @@ import { loadSlim } from '@tsparticles/slim';
 @Component({
     selector: 'app-home',
     standalone: true,
-    imports: [CommonModule, NgxParticlesModule],
+    imports: [CommonModule, RouterModule, NgxParticlesModule],
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
     animations: [
