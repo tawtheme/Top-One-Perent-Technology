@@ -1,0 +1,240 @@
+<div class="text-white font-sans min-h-screen">
+
+    <!-- 1. Heading Section -->
+    <section class="project-hero-section section-animation relative overflow-hidden px-3 sm:px-5 text-left">
+        <div class="content-wrapper w-full mx-auto px-4 sm:px-6 md:w-4/5">
+            <div class="content">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-2 sm:mb-4 md:mb-6">
+                    Start your project
+                </h1>
+                <p class="text-brand-gray mb-6 sm:mb-8 md:mb-10 text-sm sm:text-base">
+                    Fill out the form below and we'll get back to you with a detailed proposal within 24 hours.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="relative z-10">
+
+        <!-- 2. Project Request Form Section -->
+        <section class="px-3 sm:px-5 project-section-padding">
+            <div class="content-wrapper w-full mx-auto px-4 sm:px-6 md:w-4/5">
+                <!-- Project Request Form -->
+                <div class="project-request-form">
+                    <form [formGroup]="projectRequestForm" (ngSubmit)="onSubmit()" class="form-container">
+                        <div class="form-grid">
+                            <!-- Personal Information -->
+                            <div class="form-section">
+                                <h3 class="section-title">Personal Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="fullName">Full Name *</label>
+                                        <input 
+                                            type="text" 
+                                            id="fullName" 
+                                            formControlName="fullName"
+                                            placeholder="Enter your full name"
+                                            class="form-input">
+                                        <div *ngIf="getFieldError('fullName')" class="error-message">
+                                            {{ getFieldError('fullName') }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email Address *</label>
+                                        <input 
+                                            type="email" 
+                                            id="email" 
+                                            formControlName="email"
+                                            placeholder="Enter your email address"
+                                            class="form-input">
+                                        <div *ngIf="getFieldError('email')" class="error-message">
+                                            {{ getFieldError('email') }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number *</label>
+                                        <input 
+                                            type="tel" 
+                                            id="phone" 
+                                            formControlName="phone"
+                                            placeholder="Enter your phone number"
+                                            class="form-input">
+                                        <div *ngIf="getFieldError('phone')" class="error-message">
+                                            {{ getFieldError('phone') }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="company">Company Name *</label>
+                                        <input 
+                                            type="text" 
+                                            id="company" 
+                                            formControlName="company"
+                                            placeholder="Enter your company name"
+                                            class="form-input">
+                                        <div *ngIf="getFieldError('company')" class="error-message">
+                                            {{ getFieldError('company') }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project Details -->
+                            <div class="form-section">
+                                <h3 class="section-title">Project Details</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="projectType">Project Type *</label>
+                                        <select 
+                                            id="projectType" 
+                                            formControlName="projectType"
+                                            class="form-select">
+                                            <option value="">Select project type</option>
+                                            <option *ngFor="let type of projectTypes" [value]="type">
+                                                {{ type }}
+                                            </option>
+                                        </select>
+                                        <div *ngIf="getFieldError('projectType')" class="error-message">
+                                            {{ getFieldError('projectType') }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="projectTitle">Project Title *</label>
+                                        <input 
+                                            type="text" 
+                                            id="projectTitle" 
+                                            formControlName="projectTitle"
+                                            placeholder="Enter project title"
+                                            class="form-input">
+                                        <div *ngIf="getFieldError('projectTitle')" class="error-message">
+                                            {{ getFieldError('projectTitle') }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="projectDescription">Project Description *</label>
+                                    <textarea 
+                                        id="projectDescription" 
+                                        formControlName="projectDescription"
+                                        placeholder="Describe your project requirements, goals, and any specific features you need..."
+                                        rows="4"
+                                        class="form-textarea"></textarea>
+                                    <div *ngIf="getFieldError('projectDescription')" class="error-message">
+                                        {{ getFieldError('projectDescription') }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Budget & Timeline -->
+                            <div class="form-section">
+                                <h3 class="section-title">Budget & Timeline</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="budget">Budget Range *</label>
+                                        <select 
+                                            id="budget" 
+                                            formControlName="budget"
+                                            class="form-select">
+                                            <option value="">Select budget range</option>
+                                            <option *ngFor="let budget of budgetRanges" [value]="budget">
+                                                {{ budget }}
+                                            </option>
+                                        </select>
+                                        <div *ngIf="getFieldError('budget')" class="error-message">
+                                            {{ getFieldError('budget') }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="timeline">Timeline *</label>
+                                        <select 
+                                            id="timeline" 
+                                            formControlName="timeline"
+                                            class="form-select">
+                                            <option value="">Select timeline</option>
+                                            <option *ngFor="let timeline of timelineOptions" [value]="timeline">
+                                                {{ timeline }}
+                                            </option>
+                                        </select>
+                                        <div *ngIf="getFieldError('timeline')" class="error-message">
+                                            {{ getFieldError('timeline') }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="additionalRequirements">Additional Requirements</label>
+                                    <textarea 
+                                        id="additionalRequirements" 
+                                        formControlName="additionalRequirements"
+                                        placeholder="Any additional requirements, preferences, or special considerations..."
+                                        rows="3"
+                                        class="form-textarea"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-actions">
+                            <button 
+                                type="submit" 
+                                [disabled]="isSubmitting"
+                                class="submit-btn">
+                                <span *ngIf="!isSubmitting">Submit Project Request</span>
+                                <span *ngIf="isSubmitting" class="loading-spinner">
+                                    <svg class="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                    Submitting...
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Success Message -->
+                <div *ngIf="submitSuccess" class="success-message">
+                    <div class="success-content">
+                        <svg class="success-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <h3>Thank You!</h3>
+                        <p>Your project request has been submitted successfully. We'll get back to you within 24 hours with a detailed proposal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. FAQ Section -->
+        <section class="px-3 sm:px-5 cta-bg-service-gradient project-section-faqs">
+            <div class="content-wrapper w-full mx-auto px-4 sm:px-6 md:w-4/5">
+                <div class="text-center mb-8 sm:mb-12 md:mb-16">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 sm:mb-4 md:mb-6">
+                        Frequently Asked Questions
+                    </h2>
+                    <p class="text-lg sm:text-xl md:text-1xl text-gray-300 mb-6 sm:mb-8 mx-auto">
+                        Get answers to common questions about our project development process and services.
+                    </p>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+                        <div class="faq-question" (click)="toggleFaq(i)">
+                            <h3 class="faq-title">{{ faq.question }}</h3>
+                            <span class="faq-icon" [class.active]="faq.isOpen">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="faq-answer" [class.active]="faq.isOpen">
+                            <p>{{ faq.answer }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</div> 

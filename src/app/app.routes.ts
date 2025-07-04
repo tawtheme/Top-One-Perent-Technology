@@ -7,6 +7,7 @@ import { WebDevelopmentComponent } from './pages/web-development/web-development
 import { MobileApplicationComponent } from './pages/mobile-application/mobile-application.component';
 import { UiUxDesignComponent } from './pages/ui-ux-design/ui-ux-design.component';
 import { SocialMediaMarketingComponent } from './pages/social-media-marketing/social-media-marketing.component';
+import { ProjectComponent } from './pages/project/project.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ export const routes: Routes = [
     { path: 'about', component: AboutComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'faqs', component: FaqsComponent },
+    { path: 'projects', component: ProjectComponent },
     { path: 'web-development', component: WebDevelopmentComponent },
     { path: 'mobile-application', component: MobileApplicationComponent },
     { path: 'ui-ux-design', component: UiUxDesignComponent },

@@ -126,7 +126,19 @@ app-navigation {
     animation-duration: 8s;
     transition-timing-function: ease-in-out
 }
-    
+
+.sticky-values-left {
+    position: sticky;
+    top: 8rem;
+    align-self: flex-start;
+    z-index: 10;
+  
+    @media (max-width: 1024px) {
+      position: relative;
+      top: 0;
+    }
+}
+
 @property --61-x-position { 
     syntax: '<percentage>'; inherits: false; 
     initial-value: 49.2694805194806%; 

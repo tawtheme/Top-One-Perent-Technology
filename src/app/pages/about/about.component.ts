@@ -34,7 +34,8 @@ export class AboutComponent implements AfterViewInit {
     const video = this.aboutVideo?.nativeElement;
     if (!video) return;
 
-    // Ensure loop is enabled
+    // Ensure video is muted and loop is enabled
+    video.muted = true;
     video.loop = true;
 
     // Try to play the video immediately

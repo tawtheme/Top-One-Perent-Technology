@@ -1,0 +1,463 @@
+.project-hero-section{
+    padding-top: 200px;
+    padding-bottom: 0px;
+}
+
+.project-section-padding{
+    padding-top: 0px;
+    padding-bottom: 100px;
+}
+
+.project-section-faqs{
+    padding-top: 100px;
+    padding-bottom: 200px;
+}
+
+// Project Request Form Styles
+.project-request-form {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    margin-top: 2rem;
+
+    @media (min-width: 768px) {
+        padding: 3rem;
+    }
+}
+
+.form-container {
+    max-width: 100%;
+}
+
+.form-grid {
+    display: grid;
+    gap: 2rem;
+  
+    @media (min-width: 768px) {
+        gap: 3rem;
+    }
+}
+
+.form-section {
+    .section-title {
+        font-size: 1.5rem; font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: #ffc107;
+        border-bottom: 2px solid rgba(255, 193, 7, 0.3);
+        padding-bottom: 0.5rem;
+    }
+}
+
+.form-row {
+    display: grid;
+    gap: 1rem;
+  
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+  
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: white;
+        font-size: 0.875rem;
+
+        @media (min-width: 768px) {
+            font-size: 1rem;
+        }
+    }
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 0.875rem; 
+    color: white;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  
+    &::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+  
+    &:focus {
+        outline: none;
+        border-color: #ffc107;
+        box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.1);
+        background: rgba(255, 255, 255, 0.15);
+    }
+  
+    &:hover {
+        border-color: rgba(255, 255, 255, 0.4);
+    }
+  
+    @media (min-width: 768px) {
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+    }
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+
+    @media (min-width: 768px) {
+        min-height: 120px;
+    }
+}
+
+.form-select {
+    cursor: pointer;
+
+    option {
+        background: #1a1a1a;
+        color: white;
+    }
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  
+    &::before {
+        content: '⚠';
+        font-size: 0.875rem;
+    }
+}
+
+// Radio Buttons
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: white;
+
+    @media (min-width: 768px) {
+        font-size: 0.875rem;
+    }
+}
+
+.radio-input {
+    display: none;
+}
+
+.radio-custom {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    font-size: 1.5em;
+    transition: color 0.2s;
+    color: #888; // default gray
+    content: '✦';
+}
+
+.radio-input:checked + .radio-custom {
+    color: #ffc107; // yellow for selected
+}
+
+// Use ::before for the icon if you want to use emoji or SVG
+.radio-custom::before {
+    content: '✦';
+}
+
+// Form Actions
+.form-actions {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #ffc107, #ffb300);
+    color: #1a1a1a;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+
+    &:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4);
+    }
+
+    &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    @media (min-width: 768px) {
+        padding: 1.25rem 3rem;
+        font-size: 1.125rem;
+    }
+}
+
+.loading-spinner {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+// Success Message
+.success-message {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.success-content {
+    .success-icon {
+        width: 3rem;
+        height: 3rem;
+        color: #22c55e;
+        margin: 0 auto 1rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #22c55e;
+        margin-bottom: 0.5rem;
+
+        @media (min-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1rem;
+        line-height: 1.6;
+
+        @media (min-width: 768px) {
+            font-size: 1.125rem;
+        }
+    }
+}
+
+// Form Animation
+.project-request-form {
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Responsive Form
+@media (max-width: 640px) {
+    .project-request-form {
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .form-section {
+        .section-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+
+        label {
+            font-size: 0.8rem;
+        }
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+        padding: 0.625rem 0.875rem;
+        font-size: 0.8rem;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .submit-btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.875rem;
+        min-width: 180px;
+    }
+}
+
+// FAQ Styles
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-color: rgba(255, 193, 7, 0.3);
+        transform: translateY(-2px);
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.faq-question {
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    @media (min-width: 768px) {
+        padding: 2rem;
+    }
+}
+
+.faq-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    flex: 1;
+    padding-right: 1rem;
+
+    @media (min-width: 768px) {
+        font-size: 1.25rem;
+    }
+}
+
+.faq-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #ffc107;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    &.active {
+        transform: rotate(180deg);
+    }
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background: rgba(255, 255, 255, 0.02);
+
+    &.active {
+        max-height: 500px;
+        padding: 0 1.5rem 1.5rem;
+
+        @media (min-width: 768px) {
+            padding: 0 2rem 2rem;
+        }
+    }
+
+    p {
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.2;
+        margin: 0;
+        font-size: 0.875rem;
+
+        @media (min-width: 768px) {
+            font-size: 1rem;
+        }
+    }
+}
+
+// FAQ Animation
+.faq-item {
+    animation: fadeInUp 0.6s ease-out;
+
+    &:nth-child(1) { animation-delay: 0.1s; }
+    &:nth-child(2) { animation-delay: 0.2s; }
+    &:nth-child(3) { animation-delay: 0.3s; }
+    &:nth-child(4) { animation-delay: 0.4s; }
+    &:nth-child(5) { animation-delay: 0.5s; }
+    &:nth-child(6) { animation-delay: 0.6s; }
+    &:nth-child(7) { animation-delay: 0.7s; }
+    &:nth-child(8) { animation-delay: 0.8s; }
+}
+
+// Responsive FAQ
+@media (max-width: 640px) {
+    .faq-container {
+        max-width: 100%;
+    }
+
+    .faq-question {
+        padding: 1rem;
+    }
+
+    .faq-title {
+        font-size: 1rem;
+    }
+
+    .faq-answer.active {
+        padding: 0 1rem 1rem;
+    }
+
+    .faq-answer p {
+        font-size: 0.8rem;
+    }
+} 

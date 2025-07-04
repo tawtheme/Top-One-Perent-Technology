@@ -156,15 +156,3 @@
 .gallery-carousel:hover .gallery-track {
     animation-play-state: paused;
 }
-
-.sticky-values-left {
-  position: sticky;
-  top: 8rem;
-  align-self: flex-start;
-  z-index: 10;
-
-  @media (max-width: 1024px) {
-    position: relative;
-    top: 0;
-  }
-}

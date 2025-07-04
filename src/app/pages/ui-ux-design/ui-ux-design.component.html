@@ -73,7 +73,6 @@
         <!-- Multipurpose Designs -->
         <section class="px-3 sm:px-5 text-center section-padding">
             <div class="content-wrapper w-full mx-auto text-left px-4 sm:px-6 md:w-4/5">
-                <p class="text-brand-gray mb-3 sm:mb-5 text-sm sm:text-base">Design your fully styled interfaces with AI</p>
                 <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-8 sm:mb-10 md:mb-12">UI/UX designs<br class="hidden sm:block"> ready to shine</h2>
             </div>
             <div class="content-wrapper w-full mx-auto px-4 sm:px-6 md:w-4/5">
@@ -100,15 +99,13 @@
         <section class="px-3 sm:px-5 relative faqs-section-bg section-padding">
             <div class="content-wrapper w-full mx-auto px-4 sm:px-6 md:w-4/5 relative z-10">
                 <div class="flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-16 items-start">
-                    <div class="flex-1">
+                    <div class="flex-1 sticky-values-left">
                         <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 sm:mb-2.5">What else would you like to know?</h2>
-                        <p class="text-brand-gray text-sm sm:text-base">Design your fully styled interfaces with AI</p>
                     </div>
                     <div class="flex-1 w-full">
                         <div *ngFor="let faq of faqs; let i = index" class="border-b last:border-b-0 border-gray-700 py-4 sm:py-6 md:py-8">
                             <div class="flex justify-between items-center mb-2 cursor-pointer" (click)="toggleFaq(i)">
                                 <h4 class="text-base sm:text-lg md:text-xl m-0">{{ faq.question }}</h4>
-                                <span class="text-lg sm:text-xl md:text-2xl transition-transform duration-300" [class.rotate-45]="faq.open">+</span>
                             </div>
                             <div class="overflow-hidden transition-all duration-300 ease-in-out" 
                                  [ngClass]="faq.open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'">
